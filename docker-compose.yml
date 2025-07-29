@@ -1,0 +1,11 @@
+services:
+  cdk:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: aws-cdk
+    container_name: cdk
+    volumes:
+#      - ${pwd}:/workspace
+      - ~/.aws:/root/.aws:ro
+    tty: true
